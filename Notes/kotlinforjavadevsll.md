@@ -49,8 +49,7 @@ fun main(args: Array<String>) {
 - Kotlin: val lowest = if (a<b) a else b
   - Must contain an else clause
 - Example
-
-'''
+'
     val temp =  80
     val isAirConditionerOn = if(temp >= 80){
         println("It is warm")
@@ -59,4 +58,57 @@ fun main(args: Array<String>) {
         print("It is not so warm")
         false
     }
-'''
+'
+- when replaces the switch statement
+- Example
+  '
+  val burgersOrdered = 1
+  
+  // Simple switch case statement
+  when(burgersOrdered){
+    0 -> println("Not hungry")
+    1 -> println("Hungry")
+    2 -> println("Very hungry")
+    else -> {
+      println("Are you sure?")
+    }
+  }
+
+  // Combine statements
+  when(burgersOrdered){
+    0 -> println("Not hungry")
+    1, 2 -> println("Hungry")
+    3 -> println("Very hungry")
+    else -> {
+      println("Are you sure?")
+    }
+  }
+
+  // Comparing to result of expression
+  when(burgersOrdered){
+    Math.abs(burgersOrdered) -> println("Ordered 0 or more burgers") // Comparsing Math.abs(burgersOrdered) == burgersOrdered
+    else -> {
+      println("Orders less than 0")
+    }
+  }
+
+  // Comparing in a range
+  when(burgersOrdered){
+    0 -> println("Not hungry")
+    in 1..4 -> println("Hungry")
+    in 5..9 -> println("Very hungry")
+    else -> {
+      println("Are you sure?")
+    }
+  }
+
+  // Used as an if else statement (compact)
+  when {
+    burgersOrdered <= 0 -> println("Not hungry")
+    burgersOrdered % 2 == 1 -> println("Hungry")
+    burgersOrdered % 2 == 0 -> println("Very hungry")
+    // Notice no else statement because the list if exhaustive
+  }
+  '
+  - while do loop is the same as java
+  - 
