@@ -49,6 +49,7 @@ fun main(args: Array<String>) {
 - Kotlin: val lowest = if (a<b) a else b
   - Must contain an else clause
 - Example
+
 '''
     val temp =  80
     val isAirConditionerOn = if(temp >= 80){
