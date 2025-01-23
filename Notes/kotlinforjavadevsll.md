@@ -49,7 +49,7 @@ fun main(args: Array<String>) {
 - Kotlin: val lowest = if (a<b) a else b
   - Must contain an else clause
 - Example
-'
+`
     val temp =  80
     val isAirConditionerOn = if(temp >= 80){
         println("It is warm")
@@ -58,10 +58,11 @@ fun main(args: Array<String>) {
         print("It is not so warm")
         false
     }
-'
+`
 - when replaces the switch statement
 - Example
-  '
+
+`
   val burgersOrdered = 1
   
   // Simple switch case statement
@@ -109,6 +110,59 @@ fun main(args: Array<String>) {
     burgersOrdered % 2 == 0 -> println("Very hungry")
     // Notice no else statement because the list if exhaustive
   }
-  '
-  - while do loop is the same as java
-  - 
+`
+
+  - while loops is the same as java
+  - for statement works with any object that has an iterator 
+  - Example
+
+for(item in 1..10){
+   println($item)
+}
+  
+for(ch in "biscuit"){
+}
+  
+var index = 0;
+for(item in 10.rangeTo(20).step(2)) {
+  print("${++index}) $item, ")
+}
+
+for((index, item) in 10.rangeTo(20).step(2).withIndex()){
+  print("${index}) $item, ")
+}
+
+val myArray = arrayOf(10, 20, 30, 40, 50)
+for(item in myArray.indices) { // Array does not have an iterator without indices
+  println("At index $item is ${myArray[item]}")
+}
+`
+  - Functions
+`
+fun myFunction(param1: Int, param2: Int): Int {
+  return param1 + param2
+}
+
+println("10 + 20 =  ${myFunction(10,20)}")
+
+OR
+// Expression body function 
+fun myFunction1(param1: Int, param2: Int): Int = param1 + param2 // Only if the function returns a single line and returns a value
+
+// The return type can be inferred
+fun myFunction2(param1: Int, param2: Int) = param1 + param2
+
+fun myDefaults(param1: Int = 1, param2: Int = 5, message: String = "Hi"): Int {
+  val results = param1 + param2
+  println(message)
+  return results 
+}
+
+  - Packages should map file structure, but doesn't have to be
+  - Kotlin has default imports
+
+
+f
+
+
+
