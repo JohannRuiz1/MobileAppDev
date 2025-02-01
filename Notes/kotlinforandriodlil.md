@@ -59,8 +59,42 @@ fun main() {
     println(user.birthplace?.city) // boilerplate, ugly
   }
 ```  
-
-`
+- Scope function: apply, configure a variable after configuting it
+  ```
+  fun greet(v: View) {
+    val name = nameView.text.toString().trim()
+    val intent = Intent(this@MainActivity, GreetActivity::class.java).apply {
+      putExtra(GreetActivity.KEY_NAME, name)
+    }
+  }
+  ```
+- also, with, run are other scope functions
+- Sealed classes to specify cases for a when statement, removes the need of when since the class defines all of the options
 ## Readability 
+- data class has a default nice printing objects (toString)
+- implements also equals, hashCode, and copy (deep)
+- map function iterates on every element in a structure and performs an operation
+```
+  private fun update(){
+    // line1, line2, and line3 are CheckBox (checked or not checked
+    name.text = listOf(line1, line2, list3)
+        .map {
+          if(it.isChecked) {
+            "1"
+          }
+          else {
+            "0"
+          }
+        }
+        .reduce { acc, ele -> // Takes two parameters
+          // Converts into one string
+            acc + ele
+        }
+        .let { key ->
+          hashMap[key]
+        }
+  }
 
+```
 ##
+
