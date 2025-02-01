@@ -26,7 +26,7 @@ private cal greeting: TextView by lazy {
   - val name = intent.getStringExtra("name") ?: getString(R.string.world)
     - intent is command line args for mobile
 - Scope functions: let, runs a block of code if the value is not null
-`
+```
 class User(val birthplace: Place? = null)
 class Place(val country: String? = null, val city: String? = null)
 fun main() {
@@ -36,7 +36,7 @@ fun main() {
   val bob = User {
     birthplace = Place(countr = "Japan")
   }
-`
+```
   # Option 1
   val user = bob
   println(user.birthplace?.city) // returns null and ends the execution early, but doesn't crash
