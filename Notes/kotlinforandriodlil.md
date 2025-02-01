@@ -73,6 +73,7 @@ fun main() {
 ## Readability 
 - data class has a default nice printing objects (toString)
 - implements also equals, hashCode, and copy (deep)
+## Functional Programming
 - map function iterates on every element in a structure and performs an operation
 ```
   private fun update(){
@@ -97,4 +98,35 @@ fun main() {
 
 ```
 ##
+- find get the first element in the list that meets a condition
+- filter gets all element in the list that meets a condition
+- all returns true or false if all elements in the list meets a condition
+- any returns true or false if an element in the list meets a condition
+- foreach iterates between each item in the list
+```
+data class Food(val name: String, val isHealthy: Boolean, val isSnack: Boolean)
 
+fun main(){
+  val cabbage = Food("cabbage", isHealthy=true, isSnack=false)
+  val carrots = Food("carrot", isHealthy=true, isSnack=true)
+  val chips =  Food("chips", isHealthy=false, isSnack=true)
+
+  val groceries = listOf(cabbage, carrots, chips)
+
+  val healthySnack = groceries.find { it -> it.isHealthy } // return cabbage
+  val allSnacks = groceries.filter { it -> it.isSnack } // returns carrots and chips
+  val noSnacks = groceries.all { it -> !it.isSnack } // returns false
+  val anyUnhealthy = groceries.any { it -> !it.isHealthy ] // return true
+  groceries.forEach {
+    println(it)
+  }
+}
+
+```
+- KTX is a set of Kotlin extensions (includes the forEach)
+  - implementation 'androidx.core:core-ktx:1.0.1' in build.gradle.kt
+  - 
+
+
+
+  
