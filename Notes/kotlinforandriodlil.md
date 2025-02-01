@@ -36,7 +36,7 @@ fun main() {
   val bob = User {
     birthplace = Place(countr = "Japan")
   }
-
+`
   # Option 1
   val user = bob
   println(user.birthplace?.city) // returns null and ends the execution early, but doesn't crash
