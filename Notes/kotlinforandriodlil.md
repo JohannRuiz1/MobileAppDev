@@ -103,6 +103,11 @@ fun main() {
 - all returns true or false if all elements in the list meets a condition
 - any returns true or false if an element in the list meets a condition
 - foreach iterates between each item in the list
+- take returns the first specified number of elements, dropping the remainder
+- drop skips the first specified number of elements, returning the remainder
+- zip combines this stream with another list, to become a list of Pair objects
+    - One elemnt is taken from each list, until ether list runs out fo elements
+    - The `Pair` can be used as-is, with first and second as the indiviual components `{ /* some lambda expression 
 ```
 data class Food(val name: String, val isHealthy: Boolean, val isSnack: Boolean)
 
@@ -116,7 +121,7 @@ fun main(){
   val healthySnack = groceries.find { it -> it.isHealthy } // return cabbage
   val allSnacks = groceries.filter { it -> it.isSnack } // returns carrots and chips
   val noSnacks = groceries.all { it -> !it.isSnack } // returns false
-  val anyUnhealthy = groceries.any { it -> !it.isHealthy ] // return true
+  val anyUnhealthy = groceries.any { it -> !it.isHealthy } // return true
   groceries.forEach {
     println(it)
   }
