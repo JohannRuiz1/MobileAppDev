@@ -36,11 +36,15 @@ fun main() {
   val bob = User {
     birthplace = Place(countr = "Japan")
   }
+}
 ```
   # Option 1
+```
   val user = bob
   println(user.birthplace?.city) // returns null and ends the execution early, but doesn't crash
-  # Option 2
+```
+# Option 2
+```  
   user.birthplace?.city?.let {
     println(it) // the value you are evaluting defaults it, for bob it returns nothing, but doesn't crash
   }
@@ -48,12 +52,14 @@ fun main() {
   user.birthplace?.city?.let { city ->
     println(city) // renaming from it to city
   }
+```
   # Option 3
+```  
   if(user.birthplace?.city != null) {
     println(user.birthplace?.city) // boilerplate, ugly
   }
-  
-}
+```  
+
 `
 ## Readability 
 
