@@ -1,0 +1,37 @@
+<resources>
+    <!-- Text -->
+    <string name="app_name">MultiQuiz</string>
+    <!-- Questions -->
+    <string name="question_germany">What is the oldest brewhaus in Germany?</string>
+    <string name="question_iphone">What year did the first iPhone come out?</string>
+    <string name="question_secrets_management">Which of the following technologies is primarily used for secrets management?</string>
+    <string name="question_longest_lifespan">Which of the following animals is known to have the longest lifespan?</string>
+
+    <!-- Answers -->
+    <string name="answer_germany_1">Weihenstephan Brewery</string>
+    <string name="answer_germany_2">Hofbräuhaus München</string>
+    <string name="answer_germany_3">Augustiner Bräu</string>
+    <string name="answer_germany_4">Paulaner Brewery</string>
+
+    <string name="answer_iphone_1">2005</string>
+    <string name="answer_iphone_2">2007</string>
+    <string name="answer_iphone_3">2010</string>
+    <string name="answer_iphone_4">2012</string>
+
+    <string name="answer_sm_1">Keycloak</string>
+    <string name="answer_sm_2">Terraform</string>
+    <string name="answer_sm_3">Vault</string>
+    <string name="answer_sm_4">Ansible</string>
+
+    <string name="answer_ll_1">Elephant</string>
+    <string name="answer_ll_2">Blue whale</string>
+    <string name="answer_ll_3">Great white shark</string>
+    <string name="answer_ll_4">Galápagos tortoise</string>
+
+    <!-- Buttons -->
+    <string name="hint_button">Hint</string>
+    <string name="submit_button">Submit</string>
+    <!-- Popups -->
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+</resources>

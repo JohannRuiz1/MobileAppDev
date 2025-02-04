@@ -1,6 +1,7 @@
 package edu.vt.cs5254.geoquiz
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import edu.vt.cs5254.geoquiz.databinding.ActivityMainBinding
+import androidx.activity.viewModels
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     // Username: johannruiz176
 
     private lateinit var binding: ActivityMainBinding
+
 
     private val questionBank =  listOf(
         Question(R.string.question_australia, true),
@@ -40,6 +43,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+//        Log.d(TAG, "Got a QuizViewModel: $quizViewModel")
 
         binding.trueButton.setOnClickListener { view: View ->
             checkAnswer(true, view)
