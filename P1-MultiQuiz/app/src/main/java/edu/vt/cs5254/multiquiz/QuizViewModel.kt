@@ -58,9 +58,9 @@ class QuizViewModel : ViewModel() {
     fun hint() {
         currentAnswers.filter {
             !it.isCorrect && it.isEnabled
-        }.shuffled().first().let {
-            it.isEnabled = false
-            it.isSelected = false
+        }.shuffled().first().apply {
+            isEnabled = false
+            isSelected = false
         }
     }
 
