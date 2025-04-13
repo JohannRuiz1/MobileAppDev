@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">BucketList</string>
+    <string name="goal_text">Goal</string>
+    <string name="notes_text">Notes</string>
+    <string name="new_goal">New Goal</string>
+    <string name="share_goal">Share Goal</string>
+    <string name="take_photo">Take Photo</string>
+
+    <string name="goal_title">My New Goal</string>
+    <string name="title_hint">Enter Title</string>
+    <string name="last_updated_text">Last updated 2025–02–16 at 01:33:12 PM</string>
+    <string name="paused_checkbox">Paused</string>
+    <string name="completed_checkbox">Completed</string>
+    <string name="note_0_button">First Step</string>
+    <string name="note_1_button">Second Step</string>
+    <string name="note_2_button">Third Step</string>
+    <string name="note_3_button">Fourth Step</string>
+    <string name="paused">PAUSED</string>
+    <string name="completed">COMPLETED</string>
+    <string name="goal_number">Goal #</string>
+    <string name="goal_progress">Goal Progress</string>
+    <string name="progress_format">Progress: %1$d</string>
+
+    <string name="progress_hint">Enter Progress Text</string>
+    <string name="progress_dialog_title">Add Progress</string>
+    <string name="progress_dialog_positive">Add</string>
+    <string name="progress_dialog_negative">Cancel</string>
+    <string name="no_goal_text">No goals, add one!</string>
+
+    <!-- Goal Report-->
+    <string name="goal_report">%1$s\n%2$s%3$s%4$s</string>
+    <string name="report_progress">\nProgress:\n%1$s</string>
+    <string name="report_status">\nThis goal has been %1$s.</string>
+</resources>
