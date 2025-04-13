@@ -1,10 +1,12 @@
 package edu.vt.cs5254.multiquiz
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +22,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val quizViewModel: QuizViewModel by viewModels()
+
+    private val scoreLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        // Handle the result
+        if (result.data?.getBooleanExtra(RESET, false) == true) {
+            quizViewModel.resetAnswers()
+        }
+        updateView()
+    }
 
     private lateinit var buttons: List<Button>
 
@@ -69,7 +81,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.submitButton.setOnClickListener {
             quizViewModel.submit()
-            updateView()
+            if (quizViewModel.showScore) {
+                val intent = ScoreActivity.newIntent(this@MainActivity, quizViewModel.calculateScore())
+                scoreLauncher.launch(intent)
+                quizViewModel.showScore = false
+            }
+            else{
+                updateView()
+            }
         }
 
         updateView()
@@ -87,14 +106,6 @@ class MainActivity : AppCompatActivity() {
             binding.submitButton.isEnabled = answers.any{ it.isSelected }
             binding.hintButton.isEnabled = answers.filter{ it.isEnabled }.size != 1
 
-            //        val userAnswer = answers.find { it.isSelected }?.isCorrect ?: false
-            //        val toast = if (userAnswer) R.string.correct_toast else R.string.incorrect_toast
-            //
-            //        Snackbar.make(
-            //            view,
-            //            toast,
-            //            Toast.LENGTH_SHORT
-            //        ).show()
         }
         binding.questionTextView.setText(quizViewModel.currentQuestionText)
     }

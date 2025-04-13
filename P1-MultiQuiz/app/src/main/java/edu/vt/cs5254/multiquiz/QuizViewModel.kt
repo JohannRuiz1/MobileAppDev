@@ -34,25 +34,33 @@ class QuizViewModel : ViewModel() {
 
     private var currentIndex: Int = 0
 
+    var showScore: Boolean = false
+
     val currentQuestionText: Int
         get() = questionBank[currentIndex].questionResId
 
     val currentAnswers: List<Answer>
         get() = questionBank[currentIndex].answerList
 
+
     fun submit() {
-        resetAnswers()
         moveToNext()
+        if (currentIndex == 0){
+            showScore = true
+        }
     }
 
     fun selectAnswer(index: Int){
+        val isCurrentlySelected = currentAnswers[index].isSelected
+
         currentAnswers.forEach {
             it.isSelected = false
         }
 
-        currentAnswers[index].apply {
-            isSelected = true
+        if(!isCurrentlySelected){
+            currentAnswers[index].isSelected = true
         }
+
     }
 
     fun hint() {
@@ -64,15 +72,37 @@ class QuizViewModel : ViewModel() {
         }
     }
 
+    fun resetAnswers() {
+        questionBank.forEach{ answers ->
+            answers.answerList.forEach{
+                 it.isSelected = false
+                 it.isEnabled = true
+            }
+        }
+    }
+
+    fun calculateScore(): Int {
+        // If an answer is selected and correct, it's scored
+        val correctSelections = questionBank.flatMap{
+            it.answerList.filter{ answer ->
+                answer.isSelected && answer.isCorrect
+            }
+        }
+
+        // If the answer is disabled, a hint was used
+        val hintsUsed = questionBank.flatMap {
+            it.answerList.filter { answer ->
+                !answer.isEnabled
+            }
+        }
+
+        return correctSelections.size * 25 - hintsUsed.size * 7
+    }
+
     private fun moveToNext() {
         currentIndex = (currentIndex + 1) % questionBank.size
     }
 
-    private fun resetAnswers() {
-        currentAnswers.forEach {
-            it.isSelected = false
-            it.isEnabled = true
-        }
-    }
+
 
 }

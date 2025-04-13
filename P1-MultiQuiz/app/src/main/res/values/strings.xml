@@ -1,6 +1,7 @@
 <resources>
-    <!-- Text -->
     <string name="app_name">MultiQuiz</string>
+
+                                    <!-- Main Activity -->
     <!-- Questions -->
     <string name="question_germany">What is the oldest brewhaus in Germany?</string>
     <string name="question_iphone">What year did the first iPhone come out?</string>
@@ -31,7 +32,12 @@
     <!-- Buttons -->
     <string name="hint_button">Hint</string>
     <string name="submit_button">Submit</string>
-    <!-- Popups -->
-    <string name="correct_toast">Correct!</string>
-    <string name="incorrect_toast">Incorrect!</string>
+
+                                    <!-- Score Activity -->
+    <!-- Text -->
+    <string name="quiz_text">Quiz Score</string>
+    <string name="score_text">\?</string>
+
+    <!-- Buttons -->
+    <string name="reset_button">Reset Quiz</string>
 </resources>
