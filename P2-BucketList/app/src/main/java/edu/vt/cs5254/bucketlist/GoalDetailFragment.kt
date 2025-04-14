@@ -216,30 +216,30 @@ class GoalDetailFragment: Fragment() {
                 titleText.setText(goalAndNotes.goal.title)
             }
 
-            goalAndNotes.notes.let { notes ->
-                buttons.forEachIndexed { index, button ->
-                    if (index < notes.size) {
-                        val note = notes[index]
-                        when (note.type) {
-                            NoteType.PROGRESS -> {
-                                button.setBackgroundWithContrastingText("navy")
-                                button.text = note.text
-                            }
-                            NoteType.PAUSED -> {
-                                button.setBackgroundWithContrastingText("silver")
-                                button.text = NoteType.PAUSED.toString()
-                            }
-                            NoteType.COMPLETED -> {
-                                button.setBackgroundWithContrastingText("maroon")
-                                button.text = NoteType.COMPLETED.toString()
-                            }
-                        }
-                        button.visibility = View.VISIBLE
-                    } else {
-                        button.visibility = View.GONE
-                    }
-                }
-            }
+            // goalAndNotes.notes.let { notes ->
+            //     buttons.forEachIndexed { index, button ->
+            //         if (index < notes.size) {
+            //             val note = notes[index]
+            //             when (note.type) {
+            //                 NoteType.PROGRESS -> {
+            //                     button.setBackgroundWithContrastingText("navy")
+            //                     button.text = note.text
+            //                 }
+            //                 NoteType.PAUSED -> {
+            //                     button.setBackgroundWithContrastingText("silver")
+            //                     button.text = NoteType.PAUSED.toString()
+            //                 }
+            //                 NoteType.COMPLETED -> {
+            //                     button.setBackgroundWithContrastingText("maroon")
+            //                     button.text = NoteType.COMPLETED.toString()
+            //                 }
+            //             }
+            //             button.visibility = View.VISIBLE
+            //         } else {
+            //             button.visibility = View.GONE
+            //         }
+            //     }
+            // }
         }
         updatePhoto(goalAndNotes)
     }

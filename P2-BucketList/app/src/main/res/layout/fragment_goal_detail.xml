@@ -87,7 +87,13 @@
             android:text="@string/notes_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <Button
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/note_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="true" /> <!-- Confirm value-->
+
+        <!-- <Button
             android:id="@+id/note_0_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -120,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            tools:text="@string/paused" />
+            tools:text="@string/paused" /> -->
 
     </LinearLayout>
 
